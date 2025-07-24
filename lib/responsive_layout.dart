@@ -4,24 +4,24 @@ class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({
     super.key,
     required this.mobileBody,
-    this.tabletBody,
+    required this.tabletBody,
   });
 
   final Widget mobileBody;
-  final Widget? tabletBody;
-
-  static bool isMobile(BuildContext context) =>
-      MediaQuery.of(context).size.width < 600;
-  static bool isTablet(BuildContext context) =>
-      MediaQuery.of(context).size.width > 600;
+  final Widget tabletBody;
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    if (size.width <= 600) {
-      return mobileBody;
-    } else {
-      return tabletBody!;
-    }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth <= 600) {
+          return mobileBody;
+        } else if (constraints.maxWidth > 600) {
+          return tabletBody;
+        } else {
+          return mobileBody;
+        }
+      },
+    );
   }
 }

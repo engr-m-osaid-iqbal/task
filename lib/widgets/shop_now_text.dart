@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:task/constants.dart';
 
 class ShopNowText extends StatelessWidget {
   const ShopNowText({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
-
     return Padding(
-      padding: EdgeInsets.fromLTRB(
-        screenWidth * 0.05,
-        screenHeight * 0.01,
-        screenWidth * 0.03,
-        screenHeight * 0.001,
+      padding: EdgeInsets.symmetric(
+        horizontal: defaultPadding * 1.5,
+        vertical: defaultPadding,
       ),
       child: Row(
         children: [
@@ -30,10 +26,7 @@ class ShopNowText extends StatelessWidget {
               context,
             ).textTheme.bodyMedium!.copyWith(color: Colors.black),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.arrow_right_alt, size: screenWidth * 0.1),
-          ),
+          IconButton(onPressed: () {}, icon: Icon(Icons.arrow_right_alt)),
         ],
       ),
     );

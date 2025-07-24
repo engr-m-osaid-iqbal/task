@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task/constants.dart';
 import 'package:task/devices/mobile_body.dart';
+import 'package:task/devices/tablet_body.dart';
+import 'package:task/responsive_layout.dart';
 //import 'package:task/screens/home_screen.dart';
 
 void main() {
@@ -30,7 +32,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: MobileBody(),
+      home: ResponsiveLayout(
+        mobileBody: MobileBody(),
+        tabletBody: TabletBody(),
+      ),
     );
   }
 }

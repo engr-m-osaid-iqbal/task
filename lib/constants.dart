@@ -8,4 +8,4 @@ const primaryColor = LinearGradient(
 const secondaryColor = Color.fromARGB(255, 255, 71, 71);
 const bgColor = Colors.white;
 
-const defaultPadding = 1.0;
+const defaultPadding = 16.0;

@@ -6,45 +6,50 @@ class PointsPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        gradient: primaryColor,
-      ),
-      width: screenWidth * 0.95,
-      height: screenHeight * 0.1,
-      padding: EdgeInsets.fromLTRB(
-        screenWidth * 0.06,
-        screenHeight * 0.028,
-        screenWidth * 0.02,
-        screenHeight * 0.03,
-      ),
-      child: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Your Points',
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.bodyLarge,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14),
+          gradient: primaryColor,
+        ),
+        padding: const EdgeInsets.fromLTRB(
+          defaultPadding * 1.5,
+          defaultPadding,
+          defaultPadding,
+          defaultPadding,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Your Points',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  Text(
+                    'Purchase vouchers using your points',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
               ),
-              Text(
-                'Purchase vouchers using your points',
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.bodySmall,
+            ),
+            const SizedBox(width: defaultPadding),
+            Text("11,450", style: Theme.of(context).textTheme.titleLarge),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.keyboard_arrow_up_sharp,
+                color: Colors.white,
               ),
-            ],
-          ),
-          Spacer(),
-          Text("11,450", style: Theme.of(context).textTheme.titleLarge),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.keyboard_arrow_up_sharp, color: Colors.white),
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }

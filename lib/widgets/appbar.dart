@@ -6,11 +6,10 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconSize = MediaQuery.of(context).size.width * 0.06;
-
     return PreferredSize(
       preferredSize: Size.fromHeight(kToolbarHeight),
       child: Container(
+        padding: EdgeInsets.symmetric(horizontal: defaultPadding * 0.75),
         decoration: BoxDecoration(gradient: primaryColor),
         child: AppBar(
           backgroundColor: Colors.transparent,
@@ -19,12 +18,10 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
           centerTitle: true,
           actions: [
             IconButton(
-              iconSize: iconSize,
               onPressed: () {},
               icon: Image.asset('lib/icons/notification-bing.png'),
             ),
             IconButton(
-              iconSize: iconSize,
               onPressed: () {},
               icon: Image.asset('lib/icons/shopping-cart.png'),
             ),
