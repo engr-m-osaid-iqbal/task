@@ -1,6 +1,6 @@
-# task
+#Responsive UI for Mobile and Tablet
 
-A new Flutter project.
+It is open to take.
 
 ## Getting Started
 
